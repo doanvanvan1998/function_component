@@ -15,6 +15,7 @@ function Product() {
     const [selectProduct,setSelectProduct] = useState([]);
 
     useEffect(() => {
+        localStorage.setItem("cart","3");
             
             for( let item in product){
                 if(product[item].id == productId){
@@ -26,8 +27,14 @@ function Product() {
             
     },[productId]);
 
+    const hanlderRemoveCart =()=>{
+        localStorage.removeItem("cart")
+    }
+
+
     return (
         <div>
+            <button onClick={hanlderRemoveCart}>Cleare Cart</button>
            <select value={productId} onChange={e=>setProductId(e.target.value)}>
             <option value="1">{product[0].name}</option>
             <option value="2">{product[1].name}</option>
