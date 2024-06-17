@@ -1,8 +1,10 @@
 import { ADD_NEW_NOTE, REMOVE_NOTE, EDIT_NOTE } from "../const/index";
 
 const noteReducers = (state = [], action) => {
+    console.log("đi vào reducer");
     switch (action.type) {
       case ADD_NEW_NOTE:
+        console.log("đi vào add new note");
         const id_Note = new Date().getTime();
         state= [...state, { id: id_Note, content: action.content }];
         console.log("Thêm note:" , state);

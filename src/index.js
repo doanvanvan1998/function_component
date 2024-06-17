@@ -5,16 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-//import reducers from "./reducers/index";
+import reducers from "./reducers/index";
 
-
+const store = createStore(reducers);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+   </Provider>
 );
+console.log("Xem store:", store.getState());
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

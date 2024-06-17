@@ -1,6 +1,7 @@
 import { ADD_NEW_NOTE, REMOVE_NOTE, EDIT_NOTE } from "../const/index";
 
 export const actAddNote = (content) => {
+    console.log(content);
     return { type: ADD_NEW_NOTE, content,};
   };
   //action xóa note
